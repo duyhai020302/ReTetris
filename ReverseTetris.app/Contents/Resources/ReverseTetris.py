@@ -6,13 +6,13 @@ pygame.font.init()
 pygame.mixer.init()
 pygame.display.init()
 
-pygame.mixer.music.load("MEGALOVANIA(1).wav")
+pygame.mixer.music.load("gametheme1.wav")
 crash = pygame.mixer.Sound("Crash.wav")
 clear = pygame.mixer.Sound("TING SOUND EFFECT.wav")
 End = pygame.mixer.Sound("End.wav")
-endpic = pygame.image.load("troll.png")
+endpic = pygame.image.load("GameOver.jpg")
 winpic = pygame.image.load("win.jpg")
-back = pygame.image.load("Starsinthesky.jpg")
+back = pygame.image.load("background2.jpg")
 Win = pygame.mixer.Sound("PARTY POPPER with SOUND Green Screen HD.wav")
 
 ScreenWidth = 800
@@ -309,7 +309,7 @@ def window(surface, grid, score=0, scorelast = 0):
 
     surface.blit(label, (sx - 40, sy + 100))
 
-    label = font.render('Press p to Pause', 1, (204,204,255))
+    label = font.render('Press P to Pause', 1, (204,204,255))
 
     sx = x_corner - 200
     sy = y_corner + 200
@@ -477,7 +477,6 @@ def main(win):
                 pygame.mixer.Sound.play(Win)
                 win.fill((0, 0, 0))
                 win.blit(pygame.transform.scale(winpic, (ScreenWidth, ScreenHeight)), (0, 0))
-                DrawText(win,"YOU WIN", 120, (205, 0, 0),0)
                 pygame.display.update()
                 pygame.time.delay(5000)
                 run = False
@@ -508,7 +507,7 @@ def main(win):
                 pygame.mixer.Sound.play(End)
                 win.fill((0, 0, 0))
                 win.blit(pygame.transform.scale(endpic, (ScreenWidth, ScreenHeight)), (0, 0))
-                DrawText(win, "YOU LOST", 120, (205, 0, 0),0)
+                DrawText(win, "YOU LOST", 120, (205, 0, 0),200)
                 pygame.display.update()
                 pygame.time.delay(5000)
                 run = False
